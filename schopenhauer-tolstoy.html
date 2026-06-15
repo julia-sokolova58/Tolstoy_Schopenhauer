@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шопенгауэр в текстах Толстого</title>
+    <style>
+        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #222; line-height: 1.7; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        h1, h2, h3 { color: #1a1a1a; }
+        h1 { text-align: center; border-bottom: 3px solid #8b4513; padding-bottom: 15px; }
+        .section { background: white; padding: 35px; margin-bottom: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f0e6d2; }
+        .highlight { background: #fff8e1; padding: 20px; border-left: 5px solid #8b4513; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .caption { text-align: center; font-style: italic; color: #555; margin-top: -10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Шопенгауэр в текстах Толстого</h1>
+        <p style="text-align:center; font-size:1.2em; color:#555;">
+            Корпусно-лингвистическое исследование эволюции философских мотивов
+        </p>
+
+        <div class="section">
+            <h2>Гипотезы исследования</h2>
+            <div class="highlight">
+                <strong>H1 (основная):</strong> Семантическая близость текстов Толстого к Шопенгауэру образует <strong>инвертированную U-образную кривую</strong>:<br>
+                Война и мир (т.1) → Война и мир (т.2) → Анна Каренина → <strong>пик: Крейцерова соната</strong> → спад: Воскресение
+            </div>
+            <p><strong>H2:</strong> «Война и мир» т.1 далёк от Шопенгауэра, т.2 заметно ближе.</p>
+            <p><strong>H3:</strong> В «Воскресении» шопенгауэровские маркеры переосмысляются в собственную толстовскую этику.</p>
+        </div>
+
+        <div class="section">
+            <h2>Специфические маркеры Шопенгауэра (TF-IDF)</h2>
+            <p><strong>Топ-40 слов:</strong> воля, познание, мир, явление, жизнь, природа, форма, закон, идея, сила, представление, вещь, объект, индивид, понятие, отношение, основание, образ, сущность, страдание...</p>
+        </div>
+
+        <div class="section">
+            <h2>Результаты</h2>
+            
+            <h3>1. Частотность ключевых понятий по годам</h3>
+            <img src="freq_keywords.png" alt="График частотности">
+            <p class="caption">Динамика ключевых шопенгауэровских понятий в хронологии Толстого</p>
+
+            <h3>2. Семантическая близость к Шопенгауэру (Cosine Similarity)</h3>
+            <img src="cosine_similarity.png" alt="Cosine Similarity">
+            <p class="caption">Подтверждение H1 — чёткая инвертированная U-кривая с пиком в середине 1880-х</p>
+
+            <h3>3. Визуализация пространства (t-SNE)</h3>
+            <img src="tsne_books.png" alt="t-SNE">
+            <p class="caption">Положение произведений Толстого относительно корпуса Шопенгауэра</p>
+        </div>
+
+        <div class="section">
+            <h2>Тематический анализ (LDA)</h2>
+            <p>Интерактивная визуализация тем:</p>
+            <a href="lda_interactive.html" target="_blank" style="color:#8b4513; font-weight:bold;">
+                → Открыть интерактивную LDA-визуализацию
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Ограничения исследования</h2>
+            <ul>
+                <li>Небольшой корпус Шопенгауэра (только переводы)</li>
+                <li>Центроидный подход теряет внутри-текстовую динамику</li>
+                <li>Малое число наблюдений (n=5) для статистики</li>
+                <li>LDA по фрагментам, а не по главам</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Вывод</h2>
+            <p>Хотя исследование подтверждает значительное влияние философии Шопенгауэра на Толстого с пиком в период «Анны Карениной» — «Крейцеровой сонаты» и последующим переосмыслением в позднем творчестве, выборка и методы не позволяют считать его в полной мере достоверным. Нужно расширить выборку.</p>
+        </div>
+
+        <p style="text-align:center; color:#777; margin-top:50px;">
+            Корпусное исследование • 2026
+        </p>
+    </div>
+</body>
+</html>
